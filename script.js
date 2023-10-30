@@ -1,19 +1,18 @@
 let aside = document.querySelector('aside');
-// let mainContent = document.querySelector("main")
 let bookContainer = document.querySelector('.bookCotainer');
 let sampleContainer = document.querySelector('.sample-container');
 let catagoryName = document.getElementById('catagory-name');
 let mydialog = document.querySelector('.mydialog');
 let modal = document.querySelector('.modal');
 let toggle = document.querySelector(".round");
-//todo --------- Fetching API ---------
+// Fetching API ------------------
 async function fetchingAPI(){
     let data = await fetch('https://books-backend.p.goit.global/books/top-books');
     let res = await data.json();
     append(res);
     appendAll(res)
 }
-//TODO---------append all catagories---------------
+// append all catagories---------------
 function appendAll(data){
     catagoryName.setAttribute("data-text", `Books`);
     sampleContainer.innerHTML = ""
@@ -47,7 +46,7 @@ function appendAll(data){
 }
 
 fetchingAPI();
-//todo --------- Append Catagories ---------
+//  Append Catagories ---------
 function append(arr){
     for(let i=0; i<arr.length; i++){
         let item = document.createElement('p');
@@ -65,12 +64,10 @@ function activateLinks(links){
     links[i].addEventListener("click", showBooks);
    }
 }
-//todo --------- Show Books ---------
+// - Show Books ---------
 function showBooks(e){
-    // aside.style.color = "rgba(0, 0, 0, 0.562)"
-    // e.target.style.color = "rgb(79, 46, 232)"
     if(e.target.innerText == "All Categories"){
-        // console.log("hiii");
+        // console.log("run");
         fetch('https://books-backend.p.goit.global/books/top-books')
         .then((response) => response.json())
         .then((data)=>{
@@ -81,13 +78,13 @@ function showBooks(e){
         fetchBooks(e.target.innerText);
     }
 }
-//todo --------- Fetching Books' API ---------
+// -- Fetching Books' API ---------
 async function fetchBooks(text){
     let data = await fetch(`https://books-backend.p.goit.global/books/category?category=${text}`);
     let res = await data.json();
     createObject(res);
 }
-//todo --------- Create new object---------
+// --------- Create new object---------
 function createObject(res){
     let bookArray = res.map((item) =>{
         return {
@@ -101,7 +98,7 @@ function createObject(res){
     });
     appendBooks(bookArray);
 }
-//todo --------- Append all books---------
+// ------- Append all books---------
 function appendBooks(bookArray){
     let arr = bookArray[0].listName.split(" ");
     catagoryName.setAttribute("data-text", `${arr[arr.length-1]}`);
@@ -122,7 +119,7 @@ function appendBooks(bookArray){
         bookContainer.appendChild(books);
     }
 }
-//todo --------- Show dialog box---------
+// --------- Show dialog box---------
 function openDetails(obj){
     if(obj.description == ""){
         obj.description = "there is no description of this book";
@@ -187,12 +184,12 @@ function openDetailsAll(obj){
 </svg>
     `
 }
-//todo --------- Close dialog box---------
+// -------- Close dialog box---------
 function closeDetails() {
     mydialog.close();
 }
 
-//TODO DarkTheme
+// making DarkTheme
 toggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
 });
