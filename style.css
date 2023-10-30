@@ -18,7 +18,7 @@ background: #ffffff;
 }
 
 *::-webkit-scrollbar-thumb {
-background-color: #745fdd;
+background-color: #c5bfbf;
 border-radius: 10px;
 border: 3px solid #ffffff;
 }
@@ -169,6 +169,7 @@ nav{
 }
 .dark nav{
     background-color: #191b1d;
+    border: 1px solid white;
 }
 .dark nav h2{
     color: white;
@@ -179,8 +180,9 @@ nav{
 aside{
     width: 27%;
     min-width: 200px;
-    height: 60vh;
+    height: 75vh;
     overflow-y: scroll;
+    margin-top: 30px;
 }
 .dark aside {
 scrollbar-color: #506ff8 #111;
@@ -191,7 +193,7 @@ background: #111;
 }
 
 .dark aside::-webkit-scrollbar-thumb {
-background-color: #745fdd;
+background-color: #ffffff;
 border: 3px solid #111;
 }
 main{
@@ -214,19 +216,21 @@ main{
 
 .categories{
     padding: 1rem 2rem;
-    font-weight: 700;
-    font-size:18px;
+    font-weight: 500;
+    font-size:16px;
     color: rgba(0, 0, 0, 0.562);
 }
 .dark .categories{
     color: rgb(109, 108, 108);
 }
+
 .categories:hover{
-    color:rgb(79, 46, 232);
+    color:blue;
     cursor: pointer;
+    font-size: 18px;
 }
 .dark .categories:hover{
-    color:rgb(223, 108, 55);
+    color:rgb(223, 190, 55);
     cursor: pointer;
 }
 .book{
@@ -243,7 +247,7 @@ main{
 .view{
     width: 100%;
     height: 60px;
-    background-color: rgb(196, 103, 96);
+    background-color: rgb(236, 225, 58);
     position: absolute;
     bottom: 90px;
     overflow: hidden;
@@ -265,9 +269,6 @@ main{
    height:260px;
    border-top-right-radius: 15px;
    border-top-left-radius: 15px;   
-}
-.book:hover{
-    transform: scale(1.1);
 }
 .bookTitle{
     text-transform: uppercase;

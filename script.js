@@ -193,3 +193,9 @@ function closeDetails() {
 toggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
 });
+
+document.getElementById('signUpButton').addEventListener('click', function() {
+    // Redirect to the sign-up page
+    window.location.href = 'signup.html'; 
+  });
+  

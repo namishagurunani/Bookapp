@@ -1,8 +1,4 @@
-document.getElementById('signUpButton').addEventListener('click', function() {
-    // Redirect to the sign-up page
-    window.location.href = 'signup.html'; 
-  });
-  
+
 const toggleSwitch = document.querySelector('.switch input');
 
 toggleSwitch.addEventListener('change', function() {
